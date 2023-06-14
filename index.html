@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Step 0 -->
+    <div class="text-center animation-test portion-step mt-80 mb-80 hide-portion-step" id="portion-step-0" style="min-height: 400px;">
+        <div class="section-title text-center">
+          <h2>Estamos preparando su menú</h2>
+        </div>
+        <img
+        src="src/images/perritocamina25.gif" alt="img"
+          style="padding-top: 120px; padding-bottom: 20px;">
+    </div>
+    <!--/Step 0-->
+
+    <!-- Step 1 -->
+    <div class="container animation-test mt-80 mb-80 portion-step" id="portion-step-1">
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-10">
+            <div class="section-title text-center">
+              <h2>¡Preséntanos a tu perro para personalizar su plan!</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-12 col-lg-12">
+            <form >
+              <div class="new-plan-form text-center">
+                <h3 class="mt-2">Nombre de tu mascota</h3>
+                <input class="new-plan-input" type="text" formControlName="name">
+                <h3>PESO (Kg)</h3>
+                <input id="form-portion-weigth" class="new-plan-input" type="number" formControlName="weigth">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row dog-sizes-images-container">
+            <div class="col-4 dog-size" target="size-child">
+            <div class="text-center">
+              <div class="pricing-head">
+                <h4></h4>
+                <div class="pricing-icon">
+                  <img alt="img" style="width: 60%" src="src/images/botones-formulario2.png" alt="img">
+                </div>
+              </div>
+              <div>
+                <input class="dog_size" type="radio" name="size-child" id="dog-size-0" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 dog-size" target="size-adult">
+            <div class="text-center">
+              <div class="pricing-head">
+                <h4></h4>
+                <div class="pricing-icon">
+                    <img alt="img" style="width: 60%" src="src/images/botones-formulario.png" alt="img">
+                  </div>
+              </div>
+              <div>
+                <input class="dog_size" type="radio" name=size-child" id="dog-size-1" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 dog-size" target="size-senior">
+            <div class="text-center">
+              <div class="pricing-head">
+                <h4></h4>
+                <div class="pricing-icon">
+                  <img alt="img" style="width: 60%" src="src/images/botones-formulario3.png" alt="img">
+                  </div>
+              </div>
+              <div>
+                <input class="dog_size" type="radio" name="size-child" id="dog-size-2" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center size-step hide-portion-step" id="size-child">
+            <form>
+              <h4>Cachorro</h4>
+              <div class="new-plan-form">
+                <input type="radio" name="size-child" id="puppy-1" class="mr-3 ml-2" value="23">
+                <label for="puppy-1">2-3 meses</label>
+              </div>
+    
+              <div class="new-plan-form">
+                <input type="radio" name="size-child" id="puppy-2" class="mr-3 ml-2" value="45">
+                <label for="puppy-2">4-5 meses</label>
+              </div>
+    
+              <div class="new-plan-form">
+                <input type="radio" name="size-child" id="puppy-3" class="mr-3 ml-2" value="67">
+                <label for="puppy-3">6-7 meses</label>
+              </div>
+    
+              <div class="new-plan-form">
+                <input type="radio" name="size-child" id="puppy-4" class="mr-3 ml-2" value="810">
+                <label for="puppy-4">8-10 meses</label>
+              </div>
+    
+              <div class="new-plan-form">
+                <input type="radio" name="size-child" id="puppy-5" class="mr-3 ml-2"
+                  value="1012">
+                <label for="puppy-5">10-12 meses</label>
+              </div>
+            </form>
+          </div>
+          <div class="col-12 text-center size-step hide-portion-step" id="size-adult">
+            <form [formGroup]="adultForm">
+              <h4>Adulto</h4>
+              <div class="new-plan-form">
+                <input type="radio" name="size-adult" id="adult-1" value="low" class="mr-3 ml-2">
+                <label for="adult-1">Actividad Baja</label>
+              </div>
+    
+              <div class="new-plan-form">
+                <input type="radio" name="size-adult" id="adult-2" value="normal"
+                  class="mr-3 ml-2">
+                <label for="adult-2">Actividad Normal</label>
+              </div>
+    
+              <div class="new-plan-form">
+                <input type="radio" name="size-adult" id="adult-3" value="sport"
+                  class="mr-3 ml-2">
+                <label for="adult-3">Actividad Desportista</label>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-12 col-lg-12">
+            <div class="new-plan-form text-center">
+              <form [formGroup]="dogInfo2Form">
+                <h3 class="mt-2">Raza</h3>
+                <select id="select-breed" formControlName="breed" placeholder="Selecciona la raza..."
+                  class="py-2 input_general">
+                  <option value="5">Akita Americano</option>
+                  <option value="1">otra</option>
+                  <option value="2">criollo</option>
+                  <option value="3">Affenpinscher</option>
+                  <option value="4">Airedale terrier</option>
+                  <option value="6">Akita Inu</option>
+                  <option value="7">Alano español</option>
+                  <option value="8">Alaskan malamute</option>
+                  <option value="9">American Hairless terrier</option>
+                  <option value="10">American Staffordshire Terrier</option>
+                  <option value="11">Antiguo Perro Pastor Inglés</option>
+                  <option value="12">Bóxer</option>
+                  <option value="13">Bardino (Perro majorero)</option>
+                  <option value="14">Basenji</option>
+                  <option value="15">Basset hound</option>
+                  <option value="16">Beagle</option>
+                  <option value="17">Beauceron</option>
+                  <option value="18">Bichón maltés</option>
+                  <option value="19">Bichon frisé</option>
+                  <option value="20">Bloodhound</option>
+                  <option value="21">Border collie</option>
+                  <option value="22">Borzoi</option>
+                  <option value="23">Boston terrier</option>
+                  <option value="24">Braco alemán de pelo corto</option>
+                  <option value="25">Braco alemán de pelo duro</option>
+                  <option value="26">Braco de Auvernia</option>
+                  <option value="27">Braco de Saint Germain</option>
+                  <option value="28">Braco de Weimar</option>
+                  <option value="29">Braco francés</option>
+                  <option value="30">Braco húngaro</option>
+                  <option value="31">Braco italiano</option>
+                  <option value="32">Braco tirolés</option>
+                  <option value="33">Bull Terrier</option>
+                  <option value="34">Bulldog americano</option>
+                  <option value="35">Bulldog francés</option>
+                  <option value="36">Bulldog inglés</option>
+                  <option value="37">Bullmastiff</option>
+                  <option value="38">Cão da Serra da Estrela</option>
+                  <option value="39">Cão da Serra de Aires</option>
+                  <option value="40">Cão de Agua Português</option>
+                  <option value="41">Cão de Castro Laboreiro</option>
+                  <option value="42">Cão de Fila de São Miguel</option>
+                  <option value="43">Can de palleiro</option>
+                  <option value="44">Caniche</option>
+                  <option value="45">Chihuahueño</option>
+                  <option value="46">Chow chow</option>
+                  <option value="47">Clumber spaniel</option>
+                  <option value="48">Cocker spaniel americano</option>
+                  <option value="49">Cocker spaniel inglés</option>
+                  <option value="50">Collie</option>
+                  <option value="51">Collie barbudo</option>
+                  <option value="52">Crestado Chino</option>
+                  <option value="53">Dálmata</option>
+                  <option value="54">Dachshund</option>
+                  <option value="55">Dobermann</option>
+                  <option value="56">Dogo argentino</option>
+                  <option value="57">Dogo de burdeos</option>
+                  <option value="58">Dogo guatemalteco</option>
+                  <option value="59">Epagneul papillón</option>
+                  <option value="60">Flat-Coated Retriever</option>
+                  <option value="61">Fox Terrier</option>
+                  <option value="62">Galgo español</option>
+                  <option value="63">Galgo húngaro</option>
+                  <option value="64">Galgo inglés</option>
+                  <option value="65">Galgo italiano</option>
+                  <option value="66">Gegar colombiano</option>
+                  <option value="67">Golden retriever</option>
+                  <option value="68">Gran danés</option>
+                  <option value="69">Greyhound</option>
+                  <option value="70">Grifón belga</option>
+                  <option value="71">Husky siberiano</option>
+                  <option value="72">Jack Russell Terrier</option>
+                  <option value="73">Keeshond</option>
+                  <option value="74">Kerry blue terrier</option>
+                  <option value="75">Komondor</option>
+                  <option value="76">Kuvasz</option>
+                  <option value="77">Labrador</option>
+                  <option value="78">Lebrel afgano</option>
+                  <option value="79">Lhasa apso</option>
+                  <option value="80">Lobo de saarloos</option>
+                  <option value="81">Maltés</option>
+                  <option value="82">Manchester terrier</option>
+                  <option value="83">Mastín afgano</option>
+                  <option value="84">Mastín del Pirineo</option>
+                  <option value="85">Mastín español</option>
+                  <option value="86">Mastín inglés</option>
+                  <option value="87">Mastín napolitano</option>
+                  <option value="88">Mastín tibetano</option>
+                  <option value="89">Mucuchies</option>
+                  <option value="90">Ovejero magallánico</option>
+                  <option value="91">Pastor alemán</option>
+                  <option value="92">Pastor belga</option>
+                  <option value="93">Pastor blanco suizo</option>
+                  <option value="94">Pastor catalán</option>
+                  <option value="95">Pastor croata</option>
+                  <option value="96">Pastor de los Pirineos</option>
+                  <option value="97">Pastor garafiano</option>
+                  <option value="98">Pastor holandés</option>
+                  <option value="99">Pastor leonés</option>
+                  <option value="100">Pastor mallorquín</option>
+                  <option value="101">Pastor peruano Chiribaya</option>
+                  <option value="102">Pastor vasco</option>
+                  <option value="103">Pekinés</option>
+                  <option value="104">Pembroke Welsh Corgi</option>
+                  <option value="105">Pequeño Lebrel Italiano</option>
+                  <option value="106">Perdiguero francés</option>
+                  <option value="107">Perdiguero portugués</option>
+                  <option value="108">Perro cimarrón uruguayo</option>
+                  <option value="109">Perro de agua americano</option>
+                  <option value="110">Perro de agua español</option>
+                  <option value="111">Perro de agua irlandés</option>
+                  <option value="112">Perro de agua portugués</option>
+                  <option value="113">Perro de Montaña de los Pirineos</option>
+                  <option value="114">Perro dogo mallorquín</option>
+                  <option value="115">Perro esquimal canadiense</option>
+                  <option value="116">Perro pastor de las islas Shetland</option>
+                  <option value="117">Perro peruano sin pelo</option>
+                  <option value="118">Phalène</option>
+                  <option value="119">Pinscher alemán</option>
+                  <option value="120">Pinscher miniatura</option>
+                  <option value="121">Pitbull</option>
+                  <option value="122">Podenco canario</option>
+                  <option value="123">Podenco ibicenco</option>
+                  <option value="124">Podenco portugués</option>
+                  <option value="125">Pointer</option>
+                  <option value="126">Pomerania</option>
+                  <option value="127">Presa canario</option>
+                  <option value="128">Pug</option>
+                  <option value="129">Puli</option>
+                  <option value="130">Rafeiro do Alentejo</option>
+                  <option value="131">Ratonero bodeguero andaluz</option>
+                  <option value="132">Ratonero mallorquín</option>
+                  <option value="133">Ratonero valenciano</option>
+                  <option value="134">Rhodesian Ridgeback</option>
+                  <option value="135">Rottweiler</option>
+                  <option value="136">Saluki</option>
+                  <option value="137">Samoyedo</option>
+                  <option value="138">San Bernardo</option>
+                  <option value="139">Sato</option>
+                  <option value="140">Schnauzer estándar</option>
+                  <option value="141">Schnauzer gigante</option>
+                  <option value="142">Schnauzer miniatura</option>
+                  <option value="143">Setter inglés</option>
+                  <option value="144">Setter irlandés</option>
+                  <option value="145">Shar Pei</option>
+                  <option value="146">Shiba Inu</option>
+                  <option value="147">Shih Tzu</option>
+                  <option value="148">Siberian husky</option>
+                  <option value="149">Skye terrier</option>
+                  <option value="150">Sussex spaniel</option>
+                  <option value="151">Terranova</option>
+                  <option value="152">Terrier alemán</option>
+                  <option value="153">Terrier australiano</option>
+                  <option value="154">Terrier brasileño</option>
+                  <option value="155">Terrier chileno</option>
+                  <option value="156">Terrier escocés</option>
+                  <option value="157">Terrier galés</option>
+                  <option value="158">Terrier irlandés</option>
+                  <option value="159">Weimaraner</option>
+                  <option value="160">West Highland White Terrier</option>
+                  <option value="161">Whippet</option>
+                  <option value="162">Xoloitzcuintle</option>
+                  <option value="163">Yorkshire terrier</option>
+                  <option value="164">otra</option>
+                  <option value="165">Criollo</option>
+                  <option value="166">Siamés</option>
+                  <option value="167">U Hua Dragon Li</option>
+                  <option value="168">Snowshoe</option>
+                  <option value="169">Bobtail</option>
+                  <option value="170">Korat</option>
+                  <option value="171">Ruso Azul</option>
+                  <option value="172">Bombay</option>
+                  <option value="173">Habana</option>
+                  <option value="174">Esfinge Gris</option>
+                  <option value="175">Esfinge Piel</option>
+                  <option value="176">Balinés</option>
+                  <option value="177">Abisinio</option>
+                  <option value="178">Bengalí</option>
+                  <option value="179">Cornish Rex</option>
+                  <option value="180">British Shorthair</option>
+                  <option value="181">Burmés</option>
+                  <option value="182">American shorthair</option>
+                  <option value="183">Burmilla</option>
+                  <option value="184">Angora Turco</option>
+                  <option value="185">Himalayo</option>
+                  <option value="186">Persa</option>
+                  <option value="187">Maine Coon</option>
+                  <option value="188">Ragdoll</option>
+                  <option value="189">Bosque de Noruega</option>
+                  <option value="190">Sagrado de Birmania</option>
+                  <option value="191">Cymric</option>
+                  <option value="192">Siberiano</option>
+                  <option value="193">Van Turco</option>
+                  <option value="194">Nubelung</option>
+                  <option value="195">Ragamuffin</option>
+                  <option value="196">Pastor Australiano</option>
+                  <option value="197">Viejo Pastor Ovejero Inglés</option>
+                  <option value="198">Abisinio</option>
+                  <option value="263">French poodle</option>
+                  <option value="327">Springer spaniel inglés</option>
+                </select>
+                <h3>Fecha cumpleaños</h3>
+    
+                <input type="date" formControlName="birthday">
+              </form>
+              <div class="mt-4">
+                <button class="btn add-card-btn calculate-ration-js">VER MI PLAN</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/Step1-->
+
+      <!-- Step 2 -->
+      <div class="container animation-test portion-step mt-80 mb-80 hide-portion-step" id="portion-step-2">
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-10">
+            <div class="section-title text-center">
+              <h2 style="margin-bottom: 1.3rem;">Hemos preparado el MENÚ</h2>
+              
+              <div class="card" style="box-shadow: 0 1px 2px 1px rgb(138 137 137 / 35%);
+                padding-bottom: 25px;
+                padding-left: 10px;
+                padding-right: 2.1rem;
+                margin-bottom: 1.2rem;">
+                <div class="new-plan-form">
+                  <h3 style="font-size: 23px">Tu mascota debe consumir</h3>
+                  <div style="    padding-left: 100px;
+                  padding-right: 100px;">
+                    <p>La ración ideal para tu perro que incluye la cantidad necesaria de calorías diarias calculada por nuestro algoritmo es de:</p>
+                  </div>
+                  <h6 style="font-size: 35px;
+                  padding-bottom: 10px;"><span id="portion-result"></span> gr/diario</h6>
+                </div>
+              </div>
+    
+              <div class="card" style="box-shadow: 0 1px 2px 1px rgb(138 137 137 / 35%);
+                padding-bottom: 25px;
+                padding-left: 10px;
+                padding-right: 2.1rem;
+                margin-bottom: 1.2rem;">
+                <div class="new-plan-form">
+                  <h3>Selecciona la cantidad de días de su dieta</h3>
+                  <div style="    padding-left: 100px;
+                  padding-right: 100px;">
+                    <p>Selecciona la cantidad de días de su dieta </p>
+                  </div>
+                  <div style="display: flex; justify-content: center">
+                    <div style="    margin-left: 25px;
+                    margin-top: 10px;
+                    margin-right: 25px;">
+    
+                      <label>
+                        <img (click)="setDayCheckout('8')" src="https://i.pinimg.com/originals/5d/d9/f7/5dd9f7c0a69e78617d46d5311d022876.png" style="width: 80px; cursor: pointer;">
+                        <h3 style="    font-size: 17px;
+                        padding-top: 10px;
+                        font-weight: 600;">8 días</h3>
+                        <div *ngIf="!loadingRationPreview">
+                          <input *ngIf="current_days != '8'" type="radio" name="number-days" id="number-days-8" (click)="setDayCheckout('8')" value="8">
+                        </div>
+                      </label>
+                    </div>
+                    <div style="    margin-left: 25px;
+                    margin-top: 10px;
+                    margin-right: 25px;">
+                      <label>
+                        <img (click)="setDayCheckout('15')" src="https://i.pinimg.com/originals/5d/d9/f7/5dd9f7c0a69e78617d46d5311d022876.png" style="width: 80px; cursor: pointer;">
+                        <h3 style="    font-size: 17px;
+                        padding-top: 10px;
+                        font-weight: 600;">15 días</h3>
+                        <div *ngIf="!loadingRationPreview">
+                          <input *ngIf="current_days != '15'"  type="radio" name="number-days" id="number-days-15" (click)="setDayCheckout('15')" value="15">
+                        </div>
+                      </label>
+                    </div>
+                    <div style="    margin-left: 25px;
+                    margin-top: 10px;
+                    margin-right: 25px;">
+                      <label>
+                        <img (click)="setDayCheckout('30')" src="https://i.pinimg.com/originals/5d/d9/f7/5dd9f7c0a69e78617d46d5311d022876.png" style="width: 80px; cursor: pointer;">
+                        <h3 style="    font-size: 17px;
+                        padding-top: 10px;
+                        font-weight: 600;">30 días</h3>
+                        <div *ngIf="!loadingRationPreview">
+                          <input *ngIf="current_days != '30'" type="radio" name="number-days" id="number-days-30" (click)="setDayCheckout('30')" value="30">
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card mt-3" style="box-shadow: 0 1px 2px 1px rgb(138 137 137 / 35%);
+              padding-bottom: 25px;
+              padding-left: 10px;
+              padding-right: 10px;
+              border-radius: 10px;">
+                <div class="new-plan-form pt-20">
+                  <h6 style="font-size: 35px;
+                    padding: 0px;
+    margin: 0px;
+    padding-top: 20px">Para <span id="portion-days"></span> Días
+                    <br>
+                    <span id="portion-units"></span> Unidades
+                  </h6>
+                  <!-- 
+                  <h3 style="margin-bottom: 10px;
+                  margin-top: 10px;
+                  font-size: 22px;">Selecciona sus menús</h3>
+                  -->
+                </div>
+                <div class="row">
+                  <div *ngFor="let item of ration.price; let i = index" class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="text-center">
+                      <div class="pricing-head d-none">
+                       
+    
+                       
+                          <span item='{{ product | json }}' meta_tags='{{ product.metafields.custom.portion_calculator_flavor }}' class="item-1">
+                          {{ product.metafields.custom.portion_calculator_flavor }}
+                          <span>
+                       
+    
+                       
+                          <span item='{{ product | json }}' meta_tags='{{ product.metafields.custom.portion_calculator_flavor }}' class="item-10">
+                          {{ product.metafields.custom.portion_calculator_flavor }}
+                          <span>
+                        
+    
+                        
+                          <span item='{{ product | json }}' meta_tags='{{ product.metafields.custom.portion_calculator_flavor }}' class="item-20">
+                          {{ product.metafields.custom.portion_calculator_flavor }}
+                          <span>
+                        
+    
+                       
+                          <span item='{{ product | json }}' meta_tags='{{ product.metafields.custom.portion_calculator_flavor }}' class="item-30">
+                          {{ product.metafields.custom.portion_calculator_flavor }}
+                          <span>
+                       
+    
+    
+                      </div>
+                      <div id="portion-results">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/Step 2-->
+    
+</body>
+<script src="assets/app.js"></script>
+<link rel="stylesheet" href="src/css/boostrap.min.css">
+<link rel="stylesheet" href="src/css/base.css">
+<link rel="stylesheet" href="src/css/style.css">
+</html>
