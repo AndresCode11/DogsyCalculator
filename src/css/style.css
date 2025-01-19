@@ -2596,10 +2596,10 @@ blockquote::before {
 	font-weight: 600;
 }
 
-.dog-sizes-images-container {
-	padding-left: 300px; 
-	padding-right: 300px; 
-	margin-top: 23px
+.pricing-icon img{
+	max-width: 200px;
+	min-width: 70px;
+	width: 100%;
 }
 
 /* Loading Spinners */
